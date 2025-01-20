@@ -1,0 +1,133 @@
+px-change-vw($px,$base = 375)
+  return ($px*100/$base)vw
+px-change-vh($px,$base = 667)
+  return ($px*100/$base)vh
+
+px2vw($px,$base = 375)
+  return ($px*100/$base)vw
+px2vh($px,$base = 667)
+  return ($px*100/$base)vh
+
+//字体加粗
+font-bold()
+  /*font-family: $font-family-medium*/
+  font-weight: 600
+  font-family: normal
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+// n行省略号
+no-wrap-plus($line-clamp = 2)
+  overflow: hidden
+  display: -webkit-box
+  -webkit-line-clamp: $line-clamp
+  -webkit-box-orient: vertical
+  word-break: break-all
+//  水平居中
+row-center()
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+//垂直居中
+col-center()
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+//  全居中
+all-center()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+//布局
+layout($direction = column, $inline = block, $wrap = wrap)
+  display: $inline == block ? flex:inline-flex
+  flex-direction: $direction
+  flex-wrap: $wrap
+// 填充盒子
+fill-box($pos = absolute)
+  position: $pos
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+border-none()
+  &:before
+    display: none
+  &:after
+    display: none
+// 扩展点击区域
+extend-click($number = -20px)
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: $number
+    left: $number
+    right: $number
+    bottom: $number
+// 线条
+border-top-1px($color = $color-line, $style = solid)
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    border-top: 1px $style $color
+    transform: scaleY(.5)
+    transform-origin 0 0
+border-bottom-1px($color = $color-line, $style = solid)
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    border-bottom: 1px $style $color
+    transform: scaleY(.5)
+    transform-origin 0 100%
+
+border-left-1px($color = $color-line, $style = solid)
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    transform: scaleX(.5) translateZ(0)
+    border-left: 1px $style $color
+    transform-origin 0 0
+border-right-1px($color = $color-line, $style = solid)
+  position: relative
+  &:after
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    transform: scaleX(.5)
+    border-right: 1px $style $color
+    transform-origin 100% 0
+border-1px($color = $color-line, $radius = 2px, $style = solid, $size = 1px)
+  position: relative
+  &:after
+    content: ""
+    pointer-events: none // 解决iphone上的点击无效Bug
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    border: $size $style $color
+    border-radius: $radius
+    box-sizing border-box
+    width 200%
+    height 200%
+    transform scale(0.5,0.5)
+    transform-origin: 0 0
+    

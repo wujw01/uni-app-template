@@ -1,0 +1,57 @@
+{
+  "pages": [
+    {
+      "path": "pages/main/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    "todo",
+    {
+      "path": "pages/main/index/index",
+      "style": {
+        "navigationBarTitleText": "内页"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/package-activity/",
+      "pages": [
+        {
+          "path": "demo/demo",
+          "style": {
+            "navigationBarTitleText": "分包"
+          }
+        },
+        "activity_todo"
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "demo",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F5F5F9"
+  },
+  "tabBar": {
+    "color": "#979BA5",
+    "selectedColor": "#19B6B4",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/index/index",
+        "iconPath": "static/tabs/icon-gift.png",
+        "selectedIconPath": "static/tabs/icon-gift_pressed.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/main/index/index",
+        "iconPath": "static/tabs/icon-mine.png",
+        "selectedIconPath": "static/tabs/icon-mine_pressed.png",
+        "text": "内页"
+      }
+    ]
+  }
+}
